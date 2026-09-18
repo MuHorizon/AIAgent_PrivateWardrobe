@@ -1,0 +1,84 @@
+/* 这里是你自己写的全局css样式 */
+:root,
+page {
+  --wardrobe-bg: #fffaf4;
+  --wardrobe-bg-soft: #f7eee4;
+  --wardrobe-surface: rgba(255, 253, 248, 0.96);
+  --wardrobe-surface-solid: #fffdf8;
+  --wardrobe-border: #f2e5d9;
+  --wardrobe-primary: #ed9b73;
+  --wardrobe-primary-deep: #d56f50;
+  --wardrobe-plum: #4b3a32;
+  --wardrobe-text: #44352f;
+  --wardrobe-muted: #90837c;
+  --wardrobe-sage: #8fa07d;
+  --wardrobe-gold: #c9a166;
+  --wardrobe-danger: #c75f50;
+  --wardrobe-shadow: 0 16rpx 42rpx rgba(101, 73, 50, 0.08);
+  --wardrobe-shadow-strong: 0 22rpx 54rpx rgba(101, 73, 50, 0.12);
+}
+
+button::after {
+  border: 0;
+}
+
+.wardrobe-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(239, 210, 165, 0.28) 0, rgba(239, 210, 165, 0) 260rpx),
+    radial-gradient(circle at 92% 14%, rgba(143, 160, 125, 0.18) 0, rgba(143, 160, 125, 0) 230rpx),
+    linear-gradient(180deg, #fffaf4 0%, #fffdf9 46%, #fff9f1 100%);
+}
+
+.wardrobe-card {
+  border: 1rpx solid var(--wardrobe-border);
+  border-radius: 22rpx;
+  background: var(--wardrobe-surface);
+  box-shadow: var(--wardrobe-shadow);
+}
+
+.wardrobe-primary-button {
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, var(--wardrobe-primary), var(--wardrobe-primary-deep));
+  color: #ffffff;
+  box-shadow: 0 18rpx 36rpx rgba(101, 73, 50, 0.16);
+}
+
+.wardrobe-secondary-button {
+  border: 1rpx solid var(--wardrobe-border);
+  border-radius: 999rpx;
+  background: var(--wardrobe-surface-solid);
+  color: var(--wardrobe-primary-deep);
+}
+
+.wardrobe-tag {
+  border: 1rpx solid #efd9c8;
+  border-radius: 999rpx;
+  background: #fff3e8;
+  color: var(--wardrobe-primary-deep);
+}
+
+.wardrobe-input {
+  border: 1rpx solid var(--wardrobe-border);
+  border-radius: 18rpx;
+  background: #fffdfb;
+  color: var(--wardrobe-text);
+}
+
+/* #ifdef WEB */
+.uni-mask,
+.uni-modal,
+uni-toast,
+uni-modal,
+.uni-actionsheet {
+  z-index: 999999 !important;
+}
+/* 禁用双击缩放，直接触发点击，解决Web端点击响应延迟的问题 */
+a,
+button,
+view,
+text {
+  touch-action: manipulation;
+}
+/* #endif */

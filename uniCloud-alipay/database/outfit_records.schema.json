@@ -1,0 +1,101 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "title"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "穿搭记录ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID"
+    },
+    "title": {
+      "bsonType": "string",
+      "description": "穿搭标题"
+    },
+    "scene": {
+      "bsonType": "string",
+      "description": "场景"
+    },
+    "weather": {
+      "bsonType": "string",
+      "description": "天气文本"
+    },
+    "temperature": {
+      "bsonType": "any",
+      "description": "温度"
+    },
+    "request": {
+      "bsonType": "object",
+      "description": "用户原始搭配需求"
+    },
+    "source": {
+      "bsonType": "string",
+      "description": "穿搭来源，例如 doubao 或 rule_fallback"
+    },
+    "ai_task_id": {
+      "bsonType": "string",
+      "description": "生成本次穿搭对应的AI任务ID"
+    },
+    "clothes_ids": {
+      "bsonType": "array",
+      "description": "本套搭配包含的衣物ID"
+    },
+    "outfit_items": {
+      "bsonType": "array",
+      "description": "本套搭配包含的衣物摘要"
+    },
+    "reason": {
+      "bsonType": "string",
+      "description": "推荐理由"
+    },
+    "focus_item": {
+      "bsonType": "string",
+      "description": "本套搭配的重点单品说明"
+    },
+    "weather_tip": {
+      "bsonType": "string",
+      "description": "天气温度适配说明"
+    },
+    "swap_tip": {
+      "bsonType": "string",
+      "description": "场景或天气变化时的替换建议"
+    },
+    "score": {
+      "bsonType": "int",
+      "description": "规则评分"
+    },
+    "feedback": {
+      "bsonType": "string",
+      "description": "用户反馈"
+    },
+    "is_favorite": {
+      "bsonType": "bool",
+      "description": "是否收藏"
+    },
+    "worn_date": {
+      "bsonType": "string",
+      "description": "穿着日期"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "状态"
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.1"
+}

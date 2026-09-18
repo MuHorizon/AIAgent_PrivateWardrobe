@@ -1,0 +1,106 @@
+{
+  "bsonType": "object",
+  "required": ["type", "dimension", "start_time", "end_time"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "type": {
+      "title": "统计类型",
+      "bsonType": "string",
+      "enum": [{ "value": "user", "text": "用户统计" }]
+    },
+    "dimension": {
+      "title": "统计维度",
+      "bsonType": "string",
+      "enum": [
+        { "value": "hour", "text": "小时" },
+        { "value": "day", "text": "天" },
+        { "value": "week", "text": "周" },
+        { "value": "month", "text": "月" }
+      ]
+    },
+    "start_time": {
+      "title": "开始时间",
+      "bsonType": "timestamp"
+    },
+    "end_time": {
+      "title": "结束时间",
+      "bsonType": "timestamp"
+    },
+    "date": {
+      "title": "时间参数",
+      "bsonType": "object",
+      "description": "时间参数(统计用)",
+      "properties": {
+        "date_day_str": {
+          "title": "日期字符串",
+          "bsonType": "string",
+          "description": "如 2021-07-27"
+        },
+        "date_month_str": {
+          "title": "月份字符串",
+          "bsonType": "string",
+          "description": "如 2021-07"
+        },
+        "date_str": {
+          "title": "完整日期时间字符串",
+          "bsonType": "string",
+          "description": "如 2021-07-27 15:00:00"
+        },
+        "year": {
+          "title": "年",
+          "bsonType": "int"
+        },
+        "month": {
+          "title": "月",
+          "bsonType": "int"
+        },
+        "day": {
+          "title": "日",
+          "bsonType": "int"
+        },
+        "hour": {
+          "title": "时",
+          "bsonType": "int"
+        },
+        "minute": {
+          "title": "分",
+          "bsonType": "int"
+        },
+        "second": {
+          "title": "秒",
+          "bsonType": "int"
+        },
+        "millisecond": {
+          "title": "毫秒",
+          "bsonType": "int"
+        },
+        "week": {
+          "title": "周",
+          "bsonType": "int"
+        },
+        "quarter": {
+          "title": "季度",
+          "bsonType": "int"
+        }
+      }
+    },
+    "user_register_count": {
+      "title": "注册用户数",
+      "bsonType": "number",
+      "description": "本时间段注册用户数量，即新增用户数量"
+    },
+    "user_login_count": {
+      "title": "登录用户数",
+      "bsonType": "number",
+      "description": "本时间段登录用户数量，即活跃用户数量"
+    }
+  },
+  "version": "0.0.1"
+}

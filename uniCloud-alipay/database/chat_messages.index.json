@@ -1,0 +1,14 @@
+[
+  {
+    "IndexName": "session_created",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [
+        { "Name": "user_id", "Direction": "1" },
+        { "Name": "session_id", "Direction": "1" },
+        { "Name": "status", "Direction": "1" },
+        { "Name": "created_at", "Direction": "1" }
+      ],
+      "MgoIsUnique": false
+    }
+  }
+]

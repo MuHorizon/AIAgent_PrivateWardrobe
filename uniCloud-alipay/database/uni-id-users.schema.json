@@ -1,0 +1,479 @@
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": {
+      "description": "存储文档 ID（用户 ID），系统自动生成"
+    },
+    "dcloud_appid": {
+      "title": "DCloud_appid",
+      "bsonType": "array",
+      "arrayType": "string",
+      "description": "允许登录的客户端的appid列表",
+      "foreignKey": "opendb-app-list.appid"
+    },
+    "username": {
+      "title": "用户名",
+      "bsonType": "string",
+      "unique": true
+    },
+    "password": {
+      "title": "密码",
+      "bsonType": "password",
+      "description": "密码，加密存储"
+    },
+    "nickname": {
+      "title": "昵称",
+      "bsonType": "string"
+    },
+    "gender": {
+      "title": "性别",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "未知" },
+        { "value": 1, "text": "男" },
+        { "value": 2, "text": "女" }
+      ]
+    },
+    "status": {
+      "title": "用户状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "正常" },
+        { "value": 1, "text": "禁用" },
+        { "value": 2, "text": "审核中" },
+        { "value": 3, "text": "审核拒绝" },
+        { "value": 4, "text": "已注销" }
+      ]
+    },
+    "token": {
+      "description": "token",
+      "bsonType": "array",
+      "arrayType": "string",
+      "permission": {
+        "read": false,
+        "write": false
+      }
+    },
+    "mobile": {
+      "bsonType": "string",
+      "title": "手机号码",
+      "description": "手机号码",
+      "pattern": "^\\+?[0-9-]{3,20}$"
+    },
+    "mobile_confirmed": {
+      "title": "手机号验证状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "未验证" },
+        { "value": 1, "text": "已验证" }
+      ]
+    },
+    "email": {
+      "title": "邮箱",
+      "bsonType": "string",
+      "format": "email"
+    },
+    "email_confirmed": {
+      "title": "邮箱验证状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "未验证" },
+        { "value": 1, "text": "已验证" }
+      ]
+    },
+    "avatar": {
+      "title": "头像地址",
+      "bsonType": "string"
+    },
+    "avatar_file": {
+      "title": "头像文件",
+      "bsonType": "file",
+      "description": "用file类型方便使用uni-file-picker组件"
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string",
+      "description": "备注",
+      "trim": "both"
+    },
+    "wx_openid": {
+      "title": "微信openid",
+      "bsonType": "object",
+      "description": "微信各个平台openid",
+      "properties": {
+        "app": {
+          "bsonType": "string",
+          "description": "app平台微信openid，uni-id配置的是preferedAppPlatform为app时生效"
+        },
+        "app-plus": {
+          "bsonType": "string",
+          "description": "app平台微信openid，uni-id配置的是preferedAppPlatform为app-plus时生效"
+        },
+        "mp-weixin": {
+          "bsonType": "string",
+          "description": "微信小程序平台openid"
+        },
+        "h5-weixin": {
+          "bsonType": "string",
+          "description": "微信公众号应用openid，uni-id配置的是preferedWebPlatform为h5时生效"
+        },
+        "web-weixin": {
+          "bsonType": "string",
+          "description": "微信公众号应用openid，uni-id配置的是preferedWebPlatform为h5时生效"
+        },
+        "h5": {
+          "bsonType": "string",
+          "description": "微信PC网页应用openid，uni-id配置的是preferedWebPlatform为web时生效"
+        },
+        "web": {
+          "bsonType": "string",
+          "description": "微信PC网页应用openid，uni-id配置的是preferedWebPlatform为web时生效"
+        }
+      }
+    },
+    "wx_unionid": {
+      "title": "微信unionid",
+      "bsonType": "string"
+    },
+    "ali_openid": {
+      "title": "支付宝平台openid",
+      "bsonType": "string"
+    },
+    "apple_openid": {
+      "title": "苹果登录openid",
+      "bsonType": "string"
+    },
+    "douyin_openid": {
+      "title": "抖音openid",
+      "bsonType": "object",
+      "description": "抖音各个平台openid",
+      "properties": {
+        "mp-toutiao": {
+          "bsonType": "string",
+          "description": "抖音小程序平台openid"
+        }
+      }
+    },
+    "douyin_unionid": {
+      "title": "抖音unionid",
+      "bsonType": "string"
+    },
+    "huawei_openid": {
+      "title": "华为openid",
+      "bsonType": "object",
+      "description": "华为各个平台openid",
+      "properties": {
+        "app-harmony": {
+          "bsonType": "string",
+          "description": "鸿蒙App平台openid"
+        },
+        "mp-harmony": {
+          "bsonType": "string",
+          "description": "鸿蒙元服务平台openid"
+        }
+      }
+    },
+    "huawei_unionid": {
+      "title": "华为unionid",
+      "bsonType": "string"
+    },
+    "realname_auth": {
+      "title": "实名认证信息",
+      "bsonType": "object",
+      "required": ["type", "auth_status"],
+      "properties": {
+        "type": {
+          "title": "认证类型",
+          "bsonType": "int",
+          "enum": [
+            { "value": 0, "text": "个人用户" },
+            { "value": 1, "text": "企业用户" }
+          ]
+        },
+        "auth_status": {
+          "title": "认证状态",
+          "bsonType": "int",
+          "enum": [
+            { "value": 0, "text": "未认证" },
+            { "value": 1, "text": "等待认证" },
+            { "value": 2, "text": "认证通过" },
+            { "value": 3, "text": "认证失败" }
+          ]
+        },
+        "auth_date": {
+          "title": "认证通过时间",
+          "bsonType": "timestamp"
+        },
+        "real_name": {
+          "title": "真实姓名/企业名称",
+          "bsonType": "string"
+        },
+        "identity": {
+          "title": "身份证号码/营业执照号码",
+          "bsonType": "string"
+        },
+        "id_card_front": {
+          "title": "身份证正面照 URL",
+          "bsonType": "string"
+        },
+        "id_card_back": {
+          "title": "身份证反面照 URL",
+          "bsonType": "string"
+        },
+        "in_hand": {
+          "title": "手持身份证照片 URL",
+          "bsonType": "string"
+        },
+        "license": {
+          "title": "营业执照 URL",
+          "bsonType": "string"
+        },
+        "contact_person": {
+          "title": "联系人姓名",
+          "bsonType": "string"
+        },
+        "contact_mobile": {
+          "title": "联系人手机号码",
+          "bsonType": "string"
+        },
+        "contact_email": {
+          "title": "联系人邮箱",
+          "bsonType": "string"
+        }
+      }
+    },
+    "register_env": {
+      "bsonType": "object",
+      "description": "注册环境信息",
+      "properties": {
+        "appid": {
+          "bsonType": "string",
+          "description": "注册时的应用AppId"
+        },
+        "uni_platform": {
+          "bsonType": "string",
+          "description": "注册时的应用平台，app、h5等"
+        },
+        "os_name": {
+          "bsonType": "string",
+          "description": "注册时的客户端系统类型，ios、android、windows、mac、linux"
+        },
+        "app_name": {
+          "bsonType": "string",
+          "description": "注册时的应用名称"
+        },
+        "app_version": {
+          "bsonType": "string",
+          "description": "注册时的应用版本名称"
+        },
+        "app_version_code": {
+          "bsonType": "string",
+          "description": "注册时的应用版本号码"
+        },
+        "channel": {
+          "bsonType": "string",
+          "description": "注册时的应用渠道或小程序启动场景"
+        },
+        "client_ip": {
+          "bsonType": "string",
+          "description": "注册时的客户端ip"
+        }
+      }
+    },
+    "register_date": {
+      "title": "注册时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    },
+    "register_ip": {
+      "title": "注册时 IP 地址",
+      "bsonType": "string",
+      "forceDefaultValue": {
+        "$env": "clientIP"
+      }
+    },
+    "last_login_date": {
+      "title": "最后登录时间",
+      "bsonType": "timestamp"
+    },
+    "last_login_ip": {
+      "title": "最后登录时 IP 地址",
+      "bsonType": "string"
+    },
+    "inviter_uid": {
+      "title": "用户全部上级邀请者",
+      "bsonType": "array",
+      "arrayType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "invite_time": {
+      "title": "受邀时间",
+      "bsonType": "timestamp"
+    },
+    "my_invite_code": {
+      "title": "用户自身邀请码",
+      "bsonType": "string"
+    },
+    "role": {
+      "title": "角色",
+      "bsonType": "array",
+      "arrayType": "string",
+      "foreignKey": "uni-id-roles.role_id"
+    },
+    "third_party": {
+      "title": "三方平台凭证",
+      "bsonType": "object"
+    },
+    "allow_login_background": {
+      "title": "是否有admin后台登录权限",
+      "bsonType": "bool",
+      "description": "是否有admin后台登录权限 true 有 false 不可登录后台（uni-id-users是官方表，本字段开始均为vk框架新增字段）"
+    },
+    "close_account": {
+      "title": "注销账户信息",
+      "bsonType": "object",
+      "properties": {
+        "confirmed": {
+          "title": "是否已确认注销",
+          "bsonType": "int",
+          "enum": [
+            { "value": 0, "text": "未确认（冷静期）" },
+            { "value": 1, "text": "已确认（已注销）" }
+          ]
+        },
+        "apply_time": {
+          "title": "申请时间",
+          "bsonType": "timestamp"
+        },
+        "close_time": {
+          "title": "实际注销时间",
+          "bsonType": "timestamp"
+        }
+      }
+    },
+    "account_balance": {
+      "title": "钱包账户余额",
+      "bsonType": "object",
+      "description": "钱包账户余额 单位分 100 = 1元",
+      "defaultValue": { "balance": 0, "used": 0, "total": 0 },
+      "properties": {
+        "balance": {
+          "title": "账户余额",
+          "bsonType": "long",
+          "description": "当前余额，单位分"
+        },
+        "used": {
+          "title": "累计使用",
+          "bsonType": "long",
+          "description": "累计使用金额，单位分"
+        },
+        "total": {
+          "title": "累计充值",
+          "bsonType": "long",
+          "description": "累计充值金额，单位分"
+        }
+      }
+    },
+    "account_integral": {
+      "title": "积分账户余额",
+      "bsonType": "object",
+      "description": "积分账户余额 1 = 1积分",
+      "defaultValue": { "balance": 0, "used": 0, "total": 0 },
+      "properties": {
+        "balance": {
+          "title": "积分余额",
+          "bsonType": "long",
+          "description": "当前积分余额"
+        },
+        "used": {
+          "title": "累计使用",
+          "bsonType": "long",
+          "description": "累计使用积分"
+        },
+        "total": {
+          "title": "累计积分",
+          "bsonType": "long",
+          "description": "累计积分(只增不减)"
+        }
+      }
+    },
+    "account_reward": {
+      "title": "可提现账户",
+      "bsonType": "object",
+      "description": "可提现账户 单位分 100 = 1元",
+      "defaultValue": { "wait": 0, "allow": 0, "success": 0, "used": 0, "total": 0 },
+      "properties": {
+        "wait": {
+          "title": "在途奖励",
+          "bsonType": "long",
+          "description": "在途奖励，单位分"
+        },
+        "allow": {
+          "title": "可提现奖励",
+          "bsonType": "long",
+          "description": "可提现奖励，单位分"
+        },
+        "success": {
+          "title": "已提现奖励",
+          "bsonType": "long",
+          "description": "已提现奖励，单位分"
+        },
+        "used": {
+          "title": "已使用的奖励",
+          "bsonType": "long",
+          "description": "已使用的奖励，单位分"
+        },
+        "total": {
+          "title": "累计奖励",
+          "bsonType": "long",
+          "description": "累计奖励，单位分"
+        }
+      }
+    },
+    "social_info": {
+      "title": "社交信息",
+      "bsonType": "object",
+      "description": "社交信息（可公开的）",
+      "properties": {
+        "mobile": {
+          "title": "手机号",
+          "bsonType": "string"
+        },
+        "weixin_no": {
+          "title": "微信号",
+          "bsonType": "string"
+        },
+        "weixin_qrcode": {
+          "title": "加微信的二维码",
+          "bsonType": "string"
+        }
+      }
+    },
+    "tags": {
+      "title": "标签",
+      "bsonType": "array",
+      "arrayType": "string",
+      "description": "用户标签，此处存的是标签的id",
+      "foreignKey": "vk-user-tag._id"
+    },
+    "inviter_lock": {
+      "title": "邀请人锁定",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "description": "0:未锁定,可以被其他人锁定关系 1: 已锁定,不可以被其他人锁定关系",
+      "enum": [
+        { "value": 0, "text": "未锁定" },
+        { "value": 1, "text": "已锁定" }
+      ]
+    }
+  },
+  "version": "1.1.0"
+}

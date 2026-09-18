@@ -1,0 +1,62 @@
+{
+  "bsonType": "object",
+  "required": ["name", "menu_id"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "menu_id": {
+      "title": "菜单ID",
+      "bsonType": "string",
+      "unique": true
+    },
+    "name": {
+      "title": "菜单名称",
+      "bsonType": "string"
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string"
+    },
+    "url": {
+      "title": "菜单url",
+      "bsonType": "string"
+    },
+    "icon": {
+      "title": "菜单图标",
+      "bsonType": "string"
+    },
+    "sort": {
+      "title": "排序",
+      "bsonType": "int",
+      "description": "值越大越靠后"
+    },
+    "parent_id": {
+      "title": "父级菜单Id",
+      "bsonType": "string",
+      "parentKey": "menu_id"
+    },
+    "enable": {
+      "title": "是否启用",
+      "bsonType": "bool",
+      "description": "true：启用，false：禁用"
+    },
+    "hidden_menu": {
+      "title": "是否隐藏",
+      "bsonType": "bool",
+      "description": "true：隐藏，false：显示"
+    },
+    "permission": {
+      "title": "菜单权限列表",
+      "bsonType": "array",
+      "arrayType": "string",
+      "description": "数组内每一个元素的值均为menu_id的值"
+    }
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,69 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "person_image_url"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "模拟试穿记录ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID"
+    },
+    "person_image_url": {
+      "bsonType": "string",
+      "description": "用户本人全身照地址"
+    },
+    "outfit_record_id": {
+      "bsonType": "string",
+      "description": "关联的穿搭记录ID"
+    },
+    "clothing_ids": {
+      "bsonType": "array",
+      "description": "参与试穿的衣物ID"
+    },
+    "clothing_items": {
+      "bsonType": "array",
+      "description": "参与试穿的衣物摘要"
+    },
+    "result_image_url": {
+      "bsonType": "string",
+      "description": "外部试穿服务生成的结果图地址"
+    },
+    "provider_task_id": {
+      "bsonType": "string",
+      "description": "外部试穿服务任务ID"
+    },
+    "mode": {
+      "bsonType": "string",
+      "description": "试穿模式 top/bottom/full/shopping"
+    },
+    "quota_after": {
+      "bsonType": "int",
+      "description": "本次试穿扣减后的剩余额度"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "状态 generating/success/config_needed/failed"
+    },
+    "error_message": {
+      "bsonType": "string",
+      "description": "错误信息"
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.2"
+}

@@ -1,0 +1,63 @@
+{
+  "bsonType": "object",
+  "required": ["data_id", "data", "type"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "description": "本条记录添加时间（时间戳形式）",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "data_id": {
+      "title": "组件数据id",
+      "bsonType": "string"
+    },
+    "data": {
+      "title": "组件数据",
+      "bsonType": "object"
+    },
+    "title": {
+      "title": "数据标题",
+      "bsonType": "string",
+      "description": "便于管理员查看"
+    },
+    "description": {
+      "title": "数据描述",
+      "bsonType": "string",
+      "description": "便于管理员查看"
+    },
+    "type": {
+      "title": "组件类型",
+      "bsonType": "string",
+      "enum": [
+        { "value": "image", "text": "图片（支持自由热区点击事件）" },
+        { "value": "swiper", "text": "图片轮播" },
+        { "value": "grid-btn", "text": "宫格按钮" },
+        { "value": "notice", "text": "通知" },
+        { "value": "text", "text": "文本" },
+        { "value": "rich-text", "text": "富文本" },
+        { "value": "button", "text": "按钮" }
+      ]
+    },
+    "sort": {
+      "title": "排序值",
+      "bsonType": "int",
+      "description": "越小越在前面"
+    },
+    "show": {
+      "title": "是否显示",
+      "bsonType": "bool",
+      "description": "true 显示 false 隐藏",
+      "defaultValue": true
+    },
+    "name": {
+      "title": "名称",
+      "bsonType": "string",
+      "description": "同一页面可以设置相同的name"
+    }
+  },
+  "version": "0.0.1"
+}

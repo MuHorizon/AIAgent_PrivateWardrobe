@@ -1,0 +1,201 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/wardrobe/upload",
+      "style": {
+        "navigationBarTitleText": "上传衣服"
+      }
+    },
+    {
+      "path": "pages/wardrobe/closet",
+      "style": {
+        "navigationBarTitleText": "我的衣柜"
+      }
+    },
+    {
+      "path": "pages/wardrobe/detail",
+      "style": {
+        "navigationBarTitleText": "衣物详情"
+      }
+    },
+    {
+      "path": "pages/wardrobe/outfit",
+      "style": {
+        "navigationBarTitleText": "AI 搭配"
+      }
+    },
+    {
+      "path": "pages/wardrobe/outfit-result",
+      "style": {
+        "navigationBarTitleText": "搭配结果"
+      }
+    },
+    {
+      "path": "pages/wardrobe/outfit-history",
+      "style": {
+        "navigationBarTitleText": "穿搭历史"
+      }
+    },
+    {
+      "path": "pages/wardrobe/chat",
+      "style": {
+        "navigationBarTitleText": "穿搭助手"
+      }
+    },
+    {
+      "path": "pages/wardrobe/tryon",
+      "style": {
+        "navigationBarTitleText": "模拟试穿"
+      }
+    },
+    {
+      "path": "pages/wardrobe/price-search",
+      "style": {
+        "navigationBarTitleText": "全网比价"
+      }
+    },
+    {
+      "path": "pages/wardrobe/price-detail",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/wardrobe/favorites",
+      "style": {
+        "navigationBarTitleText": "收藏"
+      }
+    },
+    {
+      "path": "pages/wardrobe/member",
+      "style": {
+        "navigationBarTitleText": "会员"
+      }
+    },
+    {
+      "path": "pages/wardrobe/settings",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/wardrobe/profile-edit",
+      "style": {
+        "navigationBarTitleText": "穿衣画像"
+      }
+    },
+    {
+      "path": "pages/wardrobe/implicit-profile",
+      "style": {
+        "navigationBarTitleText": "AI 学到的我"
+      }
+    },
+    {
+      "path": "pages/wardrobe/ai-debug",
+      "style": {
+        "navigationBarTitleText": "AI 调试"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#8F7878",
+    "selectedColor": "#735EA0",
+    "backgroundColor": "#FFFBF8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/wardrobe/closet",
+        "text": "衣柜",
+        "iconPath": "static/tabbar/closet.png",
+        "selectedIconPath": "static/tabbar/closet-active.png"
+      },
+      {
+        "pagePath": "pages/wardrobe/chat",
+        "text": "AI搭配",
+        "iconPath": "static/tabbar/outfit.png",
+        "selectedIconPath": "static/tabbar/outfit-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "static/tabbar/profile.png",
+        "selectedIconPath": "static/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/error",
+      "pages": [
+        {
+          "path": "404",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "404"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages_template",
+      "pages": [
+        {
+          "path": "uni-id/login/index/index",
+          "style": {
+            "navigationBarTitleText": "登录"
+          }
+        },
+        {
+          "path": "uni-id/login/register/register",
+          "style": {
+            "navigationBarTitleText": "注册"
+          }
+        },
+        {
+          "path": "uni-id/login/forget/forget",
+          "style": {
+            "navigationBarTitleText": "找回密码"
+          }
+        },
+        {
+          "path": "uni-id/closeAccount/closeAccount",
+          "style": {
+            "navigationBarTitleText": "账号注销"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    // #ifndef MP-ALIPAY
+    "navigationBarBackgroundColor": "#FFFAF4",
+    // #endif
+    // #ifdef APP || WEB
+    "rpxCalcMaxDeviceWidth": 450,
+    "rpxCalcBaseDeviceWidth": 375,
+    "rpxCalcIncludeWidth": 750,
+    // #endif
+    "backgroundColor": "#FFFAF4"
+  }
+}

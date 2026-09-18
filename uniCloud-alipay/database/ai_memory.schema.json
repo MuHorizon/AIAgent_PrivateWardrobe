@@ -1,0 +1,20 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "memory_type"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string", "description": "记忆ID" },
+    "user_id": { "bsonType": "string", "description": "用户ID，Agent Memory 的用户隔离边界" },
+    "memory_type": {
+      "bsonType": "string",
+      "description": "记忆类型：preference（偏好）、blacklist（黑名单）、wear_frequency（穿着频次）、chat_context（对话上下文）",
+      "enum": ["preference", "blacklist", "wear_frequency", "chat_context"]
+    },
+    "content": { "bsonType": "string", "description": "记忆内容（JSON字符串或文本摘要）" },
+    "source": { "bsonType": "string", "description": "来源：outfit.feedback / chat.send / manual" },
+    "weight": { "bsonType": "double", "description": "记忆权重 0-1，表示置信度" },
+    "created_at": { "bsonType": "timestamp", "description": "创建时间" },
+    "updated_at": { "bsonType": "timestamp", "description": "更新时间" }
+  },
+  "version": "0.0.1"
+}

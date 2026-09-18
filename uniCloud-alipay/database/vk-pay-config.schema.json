@@ -1,0 +1,44 @@
+{
+  "bsonType": "object",
+  "required": ["_id"],
+  "properties": {
+    "_id": {
+      "title": "商家ID",
+      "bsonType": "string",
+      "description": "商家id（自己定义好谁是谁就行，不可修改）位数只要不是24位就没问题"
+    },
+    "name": {
+      "title": "商家名称",
+      "bsonType": "string"
+    },
+    "wxpay": {
+      "title": "微信支付配置",
+      "bsonType": "object"
+    },
+    "alipay": {
+      "title": "支付宝支付配置",
+      "bsonType": "object"
+    },
+    "appleiap": {
+      "title": "苹果支付配置",
+      "bsonType": "object"
+    },
+    "wxpay-virtual": {
+      "title": "微信虚拟支付配置",
+      "bsonType": "object"
+    },
+    "vkspay": {
+      "title": "VksPay支付配置",
+      "bsonType": "object"
+    },
+    "douyin": {
+      "title": "抖音支付配置",
+      "bsonType": "object"
+    },
+    "huawei": {
+      "title": "华为支付配置",
+      "bsonType": "object"
+    }
+  },
+  "version": "0.0.1"
+}

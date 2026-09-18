@@ -1,0 +1,51 @@
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "_id": {
+      "title": "ID",
+      "bsonType": "string",
+      "description": "连接id，等于cid（websocket的连接id）"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "appid": {
+      "title": "DCloud_appid",
+      "bsonType": "string"
+    },
+    "user_id": {
+      "title": "用户ID",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "device_id": {
+      "title": "设备ID",
+      "bsonType": "string"
+    },
+    "url": {
+      "title": "云对象路径",
+      "bsonType": "string",
+      "description": "websocket的云对象路径"
+    },
+    "channel": {
+      "title": "频道",
+      "bsonType": "string"
+    },
+    "space_id": {
+      "title": "服务空间ID",
+      "bsonType": "string"
+    },
+    "provider": {
+      "title": "空间供应商",
+      "bsonType": "string"
+    },
+    "ip": {
+      "title": "IP地址",
+      "bsonType": "string"
+    }
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,53 @@
+{
+  "bsonType": "object",
+  "required": ["code", "scene"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "mobile": {
+      "title": "手机号码",
+      "bsonType": "string"
+    },
+    "email": {
+      "title": "邮箱",
+      "bsonType": "string"
+    },
+    "device_uuid": {
+      "title": "设备UUID",
+      "bsonType": "string"
+    },
+    "code": {
+      "title": "验证码",
+      "bsonType": "string"
+    },
+    "scene": {
+      "title": "场景",
+      "bsonType": "string",
+      "description": "使用验证码的场景，如：login, bind, unbind, pay"
+    },
+    "state": {
+      "title": "验证状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "未验证" },
+        { "value": 1, "text": "已验证" },
+        { "value": 2, "text": "已作废" }
+      ]
+    },
+    "ip": {
+      "title": "IP地址",
+      "bsonType": "string"
+    },
+    "created_date": {
+      "title": "创建时间",
+      "bsonType": "timestamp"
+    },
+    "expired_date": {
+      "title": "过期时间",
+      "bsonType": "timestamp"
+    }
+  },
+  "version": "0.0.1"
+}

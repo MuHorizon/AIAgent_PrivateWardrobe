@@ -1,0 +1,293 @@
+{
+  "bsonType": "object",
+  "required": ["type", "appid", "name"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "type": {
+      "title": "应用类型",
+      "bsonType": "string",
+      "description": "如 admin、client、rider、business （可自定义）"
+    },
+    "appid": {
+      "title": "AppID",
+      "bsonType": "string",
+      "description": "应用的AppID"
+    },
+    "app_type": {
+      "title": "应用类型",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "uni-app" },
+        { "value": 1, "text": "uni-app x" }
+      ]
+    },
+    "name": {
+      "title": "应用名称",
+      "bsonType": "string",
+      "description": "如 管理端、用户端、骑手端、商家端"
+    },
+    "description": {
+      "title": "应用描述",
+      "bsonType": "string"
+    },
+    "create_date": {
+      "title": "创建时间",
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "creator_uid": {
+      "title": "创建者ID",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "enable_upgrade_center": {
+      "title": "是否启用App升级中心",
+      "bsonType": "bool"
+    },
+    "introduction": {
+      "title": "应用简介",
+      "bsonType": "string"
+    },
+    "icon_url": {
+      "title": "应用图标链接",
+      "bsonType": "string"
+    },
+    "screenshot": {
+      "title": "应用截图",
+      "bsonType": "array",
+      "arrayType": "string"
+    },
+    "app_android": {
+      "title": "安卓 App",
+      "bsonType": "object",
+      "description": "安卓 App 相关信息",
+      "properties": {
+        "name": {
+          "title": "应用名称",
+          "bsonType": "string"
+        },
+        "url": {
+          "title": "下载地址",
+          "bsonType": "string"
+        }
+      }
+    },
+    "app_ios": {
+      "title": "苹果 App",
+      "bsonType": "object",
+      "description": "苹果 App 相关信息",
+      "properties": {
+        "name": {
+          "title": "应用名称",
+          "bsonType": "string"
+        },
+        "url": {
+          "title": "AppStore 地址",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_weixin": {
+      "title": "微信小程序",
+      "bsonType": "object",
+      "description": "微信小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_alipay": {
+      "title": "支付宝小程序",
+      "bsonType": "object",
+      "description": "支付宝小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_baidu": {
+      "title": "百度小程序",
+      "bsonType": "object",
+      "description": "百度小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_toutiao": {
+      "title": "头条小程序",
+      "bsonType": "object",
+      "description": "头条小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_qq": {
+      "title": "QQ小程序",
+      "bsonType": "object",
+      "description": "QQ小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_kuaishou": {
+      "title": "快手小程序",
+      "bsonType": "object",
+      "description": "快手小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_lark": {
+      "title": "飞书小程序",
+      "bsonType": "object",
+      "description": "飞书小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_jd": {
+      "title": "京东小程序",
+      "bsonType": "object",
+      "description": "京东小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "mp_dingtalk": {
+      "title": "钉钉小程序",
+      "bsonType": "object",
+      "description": "钉钉小程序相关信息",
+      "properties": {
+        "name": {
+          "title": "小程序名字",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "小程序码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "quickapp": {
+      "title": "快应用",
+      "bsonType": "object",
+      "description": "快应用相关信息",
+      "properties": {
+        "name": {
+          "title": "快应用名称",
+          "bsonType": "string"
+        },
+        "qrcode_url": {
+          "title": "快应用二维码url",
+          "bsonType": "string"
+        }
+      }
+    },
+    "h5": {
+      "title": "H5",
+      "bsonType": "object",
+      "description": "h5相关信息",
+      "properties": {
+        "name": {
+          "title": "h5网站名字",
+          "bsonType": "string"
+        },
+        "url": {
+          "title": "H5 可访问链接",
+          "bsonType": "string"
+        }
+      }
+    },
+    "store_list": {
+      "title": "发布的应用市场",
+      "bsonType": "array",
+      "description": "发布的应用市场",
+      "properties": {
+        "id": {
+          "title": "商店id",
+          "bsonType": "string"
+        },
+        "name": {
+          "title": "商店名称",
+          "bsonType": "string"
+        },
+        "scheme": {
+          "title": "商店 scheme",
+          "bsonType": "string"
+        },
+        "enable": {
+          "title": "是否启用",
+          "bsonType": "bool"
+        },
+        "priority": {
+          "title": "优先级",
+          "bsonType": "number",
+          "description": "按照从大到小排序"
+        }
+      }
+    }
+  },
+  "version": "0.0.1"
+}

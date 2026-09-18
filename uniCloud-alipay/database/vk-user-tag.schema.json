@@ -1,0 +1,24 @@
+{
+  "bsonType": "object",
+  "required": ["name"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "name": {
+      "title": "标签名称",
+      "bsonType": "string",
+      "unique": true
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string"
+    }
+  },
+  "version": "0.0.1"
+}

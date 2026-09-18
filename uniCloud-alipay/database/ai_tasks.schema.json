@@ -1,0 +1,65 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "task_type"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "AI任务ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID"
+    },
+    "task_type": {
+      "bsonType": "string",
+      "description": "任务类型，例如 outfit_generate"
+    },
+    "provider": {
+      "bsonType": "string",
+      "description": "模型供应商"
+    },
+    "model": {
+      "bsonType": "string",
+      "description": "模型ID"
+    },
+    "input": {
+      "bsonType": "object",
+      "description": "任务输入摘要"
+    },
+    "prompt": {
+      "bsonType": "object",
+      "description": "Prompt协议和上下文摘要，不包含密钥"
+    },
+    "output": {
+      "bsonType": "object",
+      "description": "模型输出或候选结果摘要"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "任务状态 created/running/success/failed"
+    },
+    "error_message": {
+      "bsonType": "string",
+      "description": "错误信息"
+    },
+    "fallback_reason": {
+      "bsonType": "string",
+      "description": "兜底原因"
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.1"
+}

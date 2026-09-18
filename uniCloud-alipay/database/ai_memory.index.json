@@ -1,0 +1,13 @@
+[
+  {
+    "IndexName": "user_memory_updated",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [
+        { "Name": "user_id", "Direction": "1" },
+        { "Name": "memory_type", "Direction": "1" },
+        { "Name": "updated_at", "Direction": "-1" }
+      ],
+      "MgoIsUnique": false
+    }
+  }
+]

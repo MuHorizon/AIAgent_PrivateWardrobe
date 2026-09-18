@@ -1,0 +1,50 @@
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "request_id": {
+      "title": "请求id",
+      "bsonType": "string"
+    },
+    "err": {
+      "title": "错误对象",
+      "bsonType": "object"
+    },
+    "md5": {
+      "title": "错误MD5",
+      "bsonType": "string",
+      "description": "错误对象的md5值，用于去重时用"
+    },
+    "user_id": {
+      "title": "用户id",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "url": {
+      "title": "请求地址",
+      "bsonType": "string"
+    },
+    "data": {
+      "title": "请求参数",
+      "bsonType": "object"
+    },
+    "status": {
+      "title": "当前状态",
+      "bsonType": "int",
+      "enum": [
+        { "value": 0, "text": "待处理" },
+        { "value": 1, "text": "已处理" },
+        { "value": 2, "text": "不处理" }
+      ]
+    }
+  },
+  "version": "0.0.1"
+}

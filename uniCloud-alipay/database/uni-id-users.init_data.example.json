@@ -1,0 +1,15 @@
+[
+  {
+    "_id": "001",
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD",
+    "register_date": 1596416400000,
+    "register_ip": "127.0.0.1",
+    "nickname": "YOUR_NICKNAME",
+    "role": [
+      "admin"
+    ],
+    "token": [],
+    "allow_login_background": true
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "IndexName": "_add_time",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "_add_time", "Direction": "-1", "Type": "long" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "out_trade_no",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "out_trade_no", "Direction": "1" }], "MgoIsUnique": true }
+  },
+  {
+    "IndexName": "user_order_success",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "user_order_success", "Direction": "1", "Type": "bool" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "transaction_id",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "transaction_id", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "total_fee",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "total_fee", "Direction": "1", "Type": "int" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "pid",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "pid", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "auth_code",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "auth_code", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "pay_date",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "pay_date", "Direction": "-1", "Type": "long" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "refund_num_pay_date",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [
+        { "Name": "refund_num", "Direction": "1", "Type": "int" },
+        { "Name": "pay_date", "Direction": "-1", "Type": "long" }
+      ],
+      "MgoIsUnique": false
+    }
+  }
+]

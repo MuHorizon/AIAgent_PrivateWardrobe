@@ -1,0 +1,105 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "image_url", "category", "color"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "衣物ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID，来自登录态 uid，是 Agent 查询私有衣柜的隔离边界"
+    },
+    "name": {
+      "bsonType": "string",
+      "description": "衣物名称"
+    },
+    "category": {
+      "bsonType": "string",
+      "description": "衣物分类，例如上衣、下装、鞋"
+    },
+    "type": {
+      "bsonType": "string",
+      "description": "衣物类型，例如短袖T恤、牛仔裤"
+    },
+    "color": {
+      "bsonType": "string",
+      "description": "主色"
+    },
+    "material": {
+      "bsonType": "string",
+      "description": "材质"
+    },
+    "fit": {
+      "bsonType": "string",
+      "description": "版型"
+    },
+    "style_tags": {
+      "bsonType": "array",
+      "description": "风格标签，用于 Agent 推荐排序"
+    },
+    "season_tags": {
+      "bsonType": "array",
+      "description": "季节标签，用于 Agent 场景匹配"
+    },
+    "scene_tags": {
+      "bsonType": "array",
+      "description": "场景标签，用于 Agent 检索衣柜"
+    },
+    "image_url": {
+      "bsonType": "string",
+      "description": "衣物图片云端访问地址"
+    },
+    "image_file_id": {
+      "bsonType": "string",
+      "description": "云存储文件ID，作为衣物图片的长期引用"
+    },
+    "image_cloud_path": {
+      "bsonType": "string",
+      "description": "云存储文件路径"
+    },
+    "image_provider": {
+      "bsonType": "string",
+      "description": "云存储供应商"
+    },
+    "ai_description": {
+      "bsonType": "string",
+      "description": "AI 识别说明"
+    },
+    "ai_task_id": {
+      "bsonType": "string",
+      "description": "衣物图片识别对应的AI任务ID"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "状态，active 表示可用于推荐，inactive 为软删除"
+    },
+    "wear_count": {
+      "bsonType": "int",
+      "description": "穿着次数，用于推荐排序和闲置提醒"
+    },
+    "wear_history": {
+      "bsonType": "array",
+      "description": "穿着时间戳历史，最近 50 条"
+    },
+    "last_worn_at": {
+      "bsonType": "timestamp",
+      "description": "最近一次穿着时间"
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.2"
+}

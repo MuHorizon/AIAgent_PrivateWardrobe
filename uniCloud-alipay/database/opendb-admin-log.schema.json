@@ -1,0 +1,54 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "content"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "user_id": {
+      "title": "操作者",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id",
+      "forceDefaultValue": { "$env": "uid" }
+    },
+    "user_name": {
+      "title": "用户名",
+      "bsonType": "string"
+    },
+    "title": {
+      "title": "日志标题",
+      "bsonType": "string"
+    },
+    "content": {
+      "title": "日志内容",
+      "bsonType": "string"
+    },
+    "ip": {
+      "title": "IP地址",
+      "bsonType": "string",
+      "forceDefaultValue": { "$env": "clientIP" }
+    },
+    "url": {
+      "title": "请求地址",
+      "bsonType": "string"
+    },
+    "request_param": {
+      "title": "请求参数",
+      "bsonType": "string"
+    },
+    "response": {
+      "title": "响应结果",
+      "bsonType": "string"
+    },
+    "request_id": {
+      "title": "请求id",
+      "bsonType": "string"
+    }
+  },
+  "version": "0.0.1"
+}

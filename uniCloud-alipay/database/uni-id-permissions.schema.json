@@ -1,0 +1,82 @@
+{
+  "bsonType": "object",
+  "required": ["permission_id"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "permission_id": {
+      "title": "权限唯一标识",
+      "bsonType": "string",
+      "unique": true
+    },
+    "permission_name": {
+      "title": "权限名",
+      "bsonType": "string"
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string"
+    },
+    "url": {
+      "title": "云函数请求地址",
+      "bsonType": ["string", "array"],
+      "description": "云函数权限，可以是字符串或数组"
+    },
+    "sort": {
+      "title": "排序",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "description": "越大越靠后"
+    },
+    "parent_id": {
+      "title": "父级id",
+      "bsonType": "string"
+    },
+    "enable": {
+      "title": "状态",
+      "bsonType": "bool",
+      "defaultValue": true,
+      "description": "false 禁用 true 启用"
+    },
+    "match_mode": {
+      "title": "匹配模式",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "完整路径" },
+        { "value": 1, "text": "通配符" },
+        { "value": 2, "text": "正则表达式" }
+      ]
+    },
+    "curd_category": {
+      "title": "增删改查分类",
+      "bsonType": "int",
+      "enum": [
+        { "value": 0, "text": "未分类" },
+        { "value": 1, "text": "增" },
+        { "value": 2, "text": "删" },
+        { "value": 3, "text": "改" },
+        { "value": 4, "text": "查" },
+        { "value": 5, "text": "特殊" }
+      ]
+    },
+    "level": {
+      "title": "权限级别",
+      "bsonType": "int",
+      "enum": [
+        { "value": 0, "text": "未分类" },
+        { "value": 1, "text": "子弹级（对系统安全影响小的查询等）" },
+        { "value": 2, "text": "炸弹级（专项业务操作，如发货等）" },
+        { "value": 3, "text": "榴弹级（负责人级，如提现等资产操作）" },
+        { "value": 4, "text": "核弹级（核心成员，如删库等严重影响操作）" }
+      ]
+    }
+  },
+  "version": "0.0.1"
+}

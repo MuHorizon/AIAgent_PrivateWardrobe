@@ -1,0 +1,29 @@
+{
+  "bsonType": "object",
+  "required": ["key"],
+  "properties": {
+    "_id": {
+      "title": "键名",
+      "bsonType": "string"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "value": {
+      "title": "键值",
+      "bsonType": "any"
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string"
+    },
+    "expired_at": {
+      "title": "过期时间",
+      "bsonType": "timestamp",
+      "description": "过期时间（0代表永不过期）"
+    }
+  },
+  "version": "0.0.1"
+}

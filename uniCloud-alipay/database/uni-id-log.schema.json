@@ -1,0 +1,119 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "type"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "user_id": {
+      "title": "用户id",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "ua": {
+      "title": "userAgent",
+      "bsonType": "string"
+    },
+    "type": {
+      "title": "日志类型",
+      "bsonType": "string",
+      "description": "日志类型 login logout"
+    },
+    "login_type": {
+      "title": "登录类型",
+      "bsonType": "string",
+      "enum": [
+        { "value": "password", "text": "账号密码" },
+        { "value": "email", "text": "邮箱验证码" },
+        { "value": "sms", "text": "手机短信" },
+        { "value": "token", "text": "token" },
+        { "value": "apple", "text": "苹果登录" },
+        { "value": "univerify", "text": "本机号码一键登录" },
+        { "value": "weixin", "text": "微信登录" },
+        { "value": "weixinPhoneNumber", "text": "微信手机号一键登录" },
+        { "value": "alipay", "text": "支付宝登录" },
+        { "value": "qq", "text": "QQ登录" },
+        { "value": "douyin", "text": "抖音登录" },
+        { "value": "douyinPhoneNumber", "text": "抖音手机号一键登录" },
+        { "value": "huawei", "text": "华为登录" },
+        { "value": "huaweiPhoneNumber", "text": "华为手机号一键登录" }
+      ]
+    },
+    "ip": {
+      "title": "ip地址",
+      "bsonType": "string"
+    },
+    "os": {
+      "title": "操作系统",
+      "bsonType": "string"
+    },
+    "platform": {
+      "title": "平台信息",
+      "bsonType": "string"
+    },
+    "device_uuid": {
+      "title": "设备唯一标识",
+      "bsonType": "string"
+    },
+    "state": {
+      "title": "结果",
+      "bsonType": "int",
+      "enum": [
+        { "value": 0, "text": "失败" },
+        { "value": 1, "text": "成功" }
+      ]
+    },
+    "dcloud_appid": {
+      "title": "AppId",
+      "bsonType": "string",
+      "description": "从哪个端进行的登录"
+    },
+    "date": {
+      "title": "时间参数",
+      "bsonType": "object",
+      "description": "时间参数(统计用)",
+      "properties": {
+        "date_day_str": {
+          "title": "日期字符串",
+          "bsonType": "string",
+          "description": "如 2021-07-27"
+        },
+        "date_month_str": {
+          "title": "月份字符串",
+          "bsonType": "string",
+          "description": "如 2021-07"
+        },
+        "year": {
+          "title": "年",
+          "bsonType": "int"
+        },
+        "month": {
+          "title": "月",
+          "bsonType": "int"
+        },
+        "day": {
+          "title": "日",
+          "bsonType": "int"
+        },
+        "hour": {
+          "title": "时",
+          "bsonType": "int"
+        },
+        "minute": {
+          "title": "分",
+          "bsonType": "int"
+        },
+        "second": {
+          "title": "秒",
+          "bsonType": "int"
+        }
+      }
+    }
+  },
+  "version": "0.0.1"
+}

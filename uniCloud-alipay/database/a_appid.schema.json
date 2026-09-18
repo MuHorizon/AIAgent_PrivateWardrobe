@@ -1,0 +1,46 @@
+{
+  "bsonType": "object",
+  "required": ["appid", "appsecret"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    },
+    "appid": {
+      "title": "微信小程序AppID",
+      "bsonType": "string",
+      "description": "微信小程序AppID"
+    },
+    "appsecret": {
+      "title": "微信小程序AppSecret",
+      "bsonType": "string",
+      "description": "微信小程序AppSecret，仅云函数读取"
+    },
+    "name": {
+      "title": "应用名称",
+      "bsonType": "string"
+    },
+    "enable": {
+      "title": "是否启用",
+      "bsonType": "bool",
+      "defaultValue": true
+    },
+    "remark": {
+      "title": "备注",
+      "bsonType": "string"
+    }
+  },
+  "version": "0.0.1"
+}

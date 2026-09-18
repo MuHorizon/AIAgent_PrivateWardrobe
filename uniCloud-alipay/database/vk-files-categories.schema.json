@@ -1,0 +1,33 @@
+{
+  "bsonType": "object",
+  "required": ["name"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "name": {
+      "title": "分类名称",
+      "bsonType": "string"
+    },
+    "description": {
+      "title": "类别描述",
+      "bsonType": "string"
+    },
+    "parent_id": {
+      "title": "父级分类ID",
+      "bsonType": "string",
+      "defaultValue": ""
+    },
+    "sort": {
+      "title": "排序值",
+      "bsonType": "int",
+      "defaultValue": 0
+    }
+  },
+  "version": "0.0.1"
+}

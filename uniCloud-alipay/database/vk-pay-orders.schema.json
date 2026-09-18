@@ -1,0 +1,291 @@
+{
+  "bsonType": "object",
+  "required": ["pay_type", "platform", "status", "type", "out_trade_no"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "pay_type": {
+      "title": "支付方式",
+      "bsonType": "string",
+      "description": "以_分割，左边是支付供应商，右边是支付类型，如wxpay_mp-weixin，wxpay是支付供应商，mp-weixin是微信小程序支付",
+      "enum": [
+        { "value": "wxpay_mp-weixin", "text": "微信官方 - 小程序" },
+        { "value": "wxpay_app-plus", "text": "微信官方 - App" },
+        { "value": "wxpay_h5", "text": "微信官方 - 网站二维码" },
+        { "value": "wxpay_h5-weixin", "text": "微信官方 - 公众号" },
+        { "value": "wxpay_mweb", "text": "微信官方 - 手机外部浏览器H5" },
+        { "value": "alipay_mp-alipay", "text": "支付宝官方 - 小程序" },
+        { "value": "alipay_app-plus", "text": "支付宝官方 - App" },
+        { "value": "alipay_h5", "text": "支付宝官方 - H5支付" },
+        { "value": "appleiap_app-plus", "text": "苹果应用内购" },
+        { "value": "vkspay_h5", "text": "VksPay个人支付 - H5支付" },
+        { "value": "vkspay_mp-weixin", "text": "VksPay个人支付 - 微信小程序" },
+        { "value": "vkspay_app-plus", "text": "VksPay个人支付 - App" },
+        { "value": "wxpay-virtual_mp-weixin", "text": "微信官方虚拟支付 - 微信小程序" },
+        { "value": "douyin_mp-toutiao", "text": "抖音支付 - 抖音小程序" },
+        { "value": "huawei_app-harmony", "text": "华为支付 - App" },
+        { "value": "huawei_mp-harmony", "text": "华为支付 - 元服务" }
+      ]
+    },
+    "platform": {
+      "title": "平台",
+      "bsonType": "string",
+      "description": "uni老版本平台 h5、mp-weixin、mp-alipay、app-plus等",
+      "enum": [
+        { "value": "h5", "text": "H5" },
+        { "value": "h5-weixin", "text": "微信公众号" },
+        { "value": "mweb", "text": "手机外部浏览器H5" },
+        { "value": "mp-weixin", "text": "微信小程序" },
+        { "value": "mp-alipay", "text": "支付宝小程序" },
+        { "value": "mp-toutiao", "text": "抖音小程序" },
+        { "value": "mp-harmony", "text": "鸿蒙元服务" },
+        { "value": "app-plus", "text": "App" },
+        { "value": "app-harmony", "text": "鸿蒙App" }
+      ]
+    },
+    "uni_platform": {
+      "title": "uni新版本平台",
+      "bsonType": "string",
+      "description": "uni新版本平台 web、mp-weixin、mp-alipay、app等",
+      "enum": [
+        { "value": "web", "text": "Web（H5）" },
+        { "value": "mp-weixin", "text": "微信小程序" },
+        { "value": "mp-alipay", "text": "支付宝小程序" },
+        { "value": "mp-toutiao", "text": "抖音小程序" },
+        { "value": "mp-harmony", "text": "鸿蒙元服务" },
+        { "value": "app", "text": "App" },
+        { "value": "app-harmony", "text": "鸿蒙App" }
+      ]
+    },
+    "status": {
+      "title": "支付状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": -1, "text": "已关闭" },
+        { "value": 0, "text": "未支付" },
+        { "value": 1, "text": "已支付" },
+        { "value": 2, "text": "已部分退款" },
+        { "value": 3, "text": "已全额退款" }
+      ]
+    },
+    "type": {
+      "title": "订单类型",
+      "bsonType": "string",
+      "description": "goods：订单付款 recharge：余额充值付款 vip：vip充值付款 等等，可自定义，用于判断最终执行哪个异步回调逻辑"
+    },
+    "out_trade_no": {
+      "title": "商户支付订单号",
+      "bsonType": "string",
+      "description": "需自行控制唯一"
+    },
+    "transaction_id": {
+      "title": "交易单号",
+      "bsonType": "string",
+      "description": "支付平台订单号，由支付平台控制唯一"
+    },
+    "user_id": {
+      "title": "用户ID",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "nickname": {
+      "title": "用户昵称",
+      "bsonType": "string",
+      "description": "冗余"
+    },
+    "device_id": {
+      "title": "设备ID",
+      "bsonType": "string"
+    },
+    "client_ip": {
+      "title": "客户端IP",
+      "bsonType": "string"
+    },
+    "openid": {
+      "title": "用户openid",
+      "bsonType": "string"
+    },
+    "description": {
+      "title": "支付描述",
+      "bsonType": "string",
+      "description": "如：xxxx手机1台"
+    },
+    "total_fee": {
+      "title": "订单总金额",
+      "bsonType": "number",
+      "description": "单位为分，100等于1元"
+    },
+    "refund_fee": {
+      "title": "订单总退款金额",
+      "bsonType": "number",
+      "description": "单位为分，100等于1元"
+    },
+    "refund_num": {
+      "title": "当前退款笔数",
+      "bsonType": "int"
+    },
+    "refund_list": {
+      "title": "退款详情",
+      "bsonType": "array",
+      "arrayType": "object",
+      "properties": {
+        "refund_date": {
+          "title": "退款时间",
+          "bsonType": "timestamp"
+        },
+        "refund_fee": {
+          "title": "退款金额",
+          "bsonType": "number"
+        },
+        "out_refund_no": {
+          "title": "退款单号",
+          "bsonType": "string"
+        },
+        "refund_desc": {
+          "title": "退款理由",
+          "bsonType": "string"
+        }
+      }
+    },
+    "provider_pay_method": {
+      "title": "自定义渠道下的支付方式",
+      "bsonType": "string",
+      "enum": [
+        { "value": "wxpay", "text": "微信支付" },
+        { "value": "alipay", "text": "支付宝支付" }
+      ]
+    },
+    "provider_appid": {
+      "title": "公众号/小程序/App的appid",
+      "bsonType": "string",
+      "description": "公众号appid，小程序appid，app开放平台appid 等"
+    },
+    "appid": {
+      "title": "DCloud_appid",
+      "bsonType": "string"
+    },
+    "user_order_success": {
+      "title": "用户异步通知是否执行完成",
+      "bsonType": "bool",
+      "description": "用户异步通知逻辑是否全部执行完成，且无异常（建议前端通过此参数是否为true来判断是否支付成功）"
+    },
+    "notify_mode": {
+      "title": "通知模式",
+      "bsonType": "int",
+      "enum": [
+        { "value": 0, "text": "主动调用" },
+        { "value": 1, "text": "异步回调" }
+      ]
+    },
+    "notify_url": {
+      "title": "异步回调云函数url化地址",
+      "bsonType": "string"
+    },
+    "notify_path": {
+      "title": "异步回调具体路径",
+      "bsonType": "string"
+    },
+    "create_date": {
+      "title": "创建时间",
+      "bsonType": "timestamp"
+    },
+    "pay_date": {
+      "title": "支付时间",
+      "bsonType": "timestamp"
+    },
+    "notify_date": {
+      "title": "订单通知支付成功时间",
+      "bsonType": "timestamp"
+    },
+    "cancel_date": {
+      "title": "订单主动关闭时间",
+      "bsonType": "timestamp"
+    },
+    "stat_data": {
+      "title": "支付统计相关数据",
+      "bsonType": "object",
+      "properties": {
+        "platform": {
+          "title": "平台",
+          "bsonType": "string",
+          "description": "与uni_platform唯一区别是APP区分 android 和 ios"
+        },
+        "app_version": {
+          "title": "客户端版本号",
+          "bsonType": "string",
+          "description": "字符串形式，如1.0.0"
+        },
+        "app_version_code": {
+          "title": "客户端版本号(数字)",
+          "bsonType": "number",
+          "description": "数字形式，如100"
+        },
+        "app_wgt_version": {
+          "title": "客户端热更新版本号",
+          "bsonType": "string"
+        },
+        "os": {
+          "title": "操作系统",
+          "bsonType": "string",
+          "description": "设备的操作系统 如 android ios"
+        },
+        "ua": {
+          "title": "UserAgent",
+          "bsonType": "string",
+          "description": "客户端userAgent"
+        },
+        "channel": {
+          "title": "客户端渠道",
+          "bsonType": "string"
+        },
+        "scene": {
+          "title": "小程序场景值",
+          "bsonType": "string"
+        }
+      }
+    },
+    "pid": {
+      "title": "商户id",
+      "bsonType": "string",
+      "description": "若此参数有值，则会从数据库中获取支付配置进行支付"
+    },
+    "original_data": {
+      "title": "原始数据",
+      "bsonType": "object",
+      "description": "异步回调成功后才有的字段，微信是xml，支付宝是json"
+    },
+    "notify_info": {
+      "title": "本次回调的通知数据",
+      "bsonType": "object",
+      "description": "异步回调成功后才有的字段"
+    },
+    "sub_appid": {
+      "title": "子商户appid",
+      "bsonType": "string",
+      "description": "微信服务商模式-对应子商户的appid（如果用的是服务商的appid，此值不填）"
+    },
+    "sub_mchid": {
+      "title": "子商户商户号",
+      "bsonType": "string",
+      "description": "微信服务商模式-对应子商户的商户号"
+    },
+    "app_auth_token": {
+      "title": "子商户token",
+      "bsonType": "string",
+      "description": "支付宝服务商模式-对应子商户的token"
+    },
+    "auth_appid": {
+      "title": "授权appid",
+      "bsonType": "string",
+      "description": "支付宝服务商模式-对应子商户的appid，如果不是服务商模式，则auth_appid = appid"
+    },
+    "seller_id": {
+      "title": "卖家id",
+      "bsonType": "string",
+      "description": "支付宝服务商模式-对应的卖家id"
+    }
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,59 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "session_id", "role", "text"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "消息ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID"
+    },
+    "session_id": {
+      "bsonType": "string",
+      "description": "所属对话会话ID"
+    },
+    "role": {
+      "bsonType": "string",
+      "description": "消息角色：user / assistant",
+      "enum": ["user", "assistant"]
+    },
+    "text": {
+      "bsonType": "string",
+      "description": "消息正文"
+    },
+    "request": {
+      "bsonType": "object",
+      "description": "本轮搭配请求结构"
+    },
+    "records": {
+      "bsonType": "array",
+      "description": "本轮生成的搭配记录摘要"
+    },
+    "cards": {
+      "bsonType": "array",
+      "description": "AI 回复附带的动态工具卡片"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "状态：active / deleted",
+      "enum": ["active", "deleted"]
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.2"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "IndexName": "_add_time",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "_add_time", "Direction": "-1", "Type": "long" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "type_dimension_start_time",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [
+        { "Name": "type", "Direction": "1" },
+        { "Name": "dimension", "Direction": "1" },
+        { "Name": "start_time", "Direction": "-1", "Type": "long" }
+      ],
+      "MgoIsUnique": false
+    }
+  }
+]

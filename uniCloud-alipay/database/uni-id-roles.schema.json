@@ -1,0 +1,66 @@
+{
+  "bsonType": "object",
+  "required": ["enable", "role_id", "role_name"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "enable": {
+      "title": "状态",
+      "bsonType": "bool",
+      "description": "false 禁用 true 启用",
+      "defaultValue": true
+    },
+    "role_id": {
+      "title": "角色唯一标识",
+      "bsonType": "string",
+      "unique": true
+    },
+    "role_name": {
+      "title": "角色名",
+      "bsonType": "string"
+    },
+    "permission": {
+      "title": "权限列表",
+      "bsonType": "array",
+      "arrayType": "string"
+    },
+    "menu": {
+      "title": "菜单列表",
+      "bsonType": "array",
+      "arrayType": "string"
+    },
+    "comment": {
+      "title": "备注",
+      "bsonType": "string"
+    },
+    "stats_count_info": {
+      "title": "展示用",
+      "bsonType": "object",
+      "properties": {
+        "curd_category": {
+          "title": "各个分类数量",
+          "bsonType": "object"
+        },
+        "level": {
+          "title": "各个等级数量",
+          "bsonType": "object"
+        },
+        "match_mode": {
+          "title": "各个模式数量",
+          "bsonType": "object"
+        },
+        "type": {
+          "title": "菜单和权限数量",
+          "bsonType": "object"
+        }
+      }
+    }
+  },
+  "version": "0.0.1"
+}

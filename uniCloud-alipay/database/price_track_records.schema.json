@@ -1,0 +1,20 @@
+{
+  "bsonType": "object",
+  "required": ["user_id"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string", "description": "追踪记录ID" },
+    "user_id": { "bsonType": "string", "description": "用户ID" },
+    "product_key": { "bsonType": "string", "description": "商品唯一标识" },
+    "title": { "bsonType": "string", "description": "商品名称" },
+    "price": { "bsonType": "string", "description": "当前价格" },
+    "target_price": { "bsonType": "string", "description": "目标价格" },
+    "platform": { "bsonType": "string", "description": "商品平台" },
+    "image_url": { "bsonType": "string", "description": "商品图片" },
+    "url": { "bsonType": "string", "description": "购买链接" },
+    "status": { "bsonType": "string", "description": "追踪状态 active/paused/completed" },
+    "created_at": { "bsonType": "timestamp", "description": "创建时间" },
+    "updated_at": { "bsonType": "timestamp", "description": "更新时间" }
+  },
+  "version": "0.0.1"
+}

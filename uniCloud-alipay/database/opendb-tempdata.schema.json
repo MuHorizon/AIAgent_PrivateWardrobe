@@ -1,0 +1,17 @@
+{
+  "bsonType": "object",
+  "required": ["value", "expired"],
+  "properties": {
+    "_id": {
+      "title": "键名"
+    },
+    "value": {
+      "description": "键值"
+    },
+    "expired": {
+      "description": "过期时间",
+      "bsonType": "timestamp"
+    }
+  },
+  "version": "0.0.1"
+}

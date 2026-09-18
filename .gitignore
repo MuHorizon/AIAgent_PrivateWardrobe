@@ -1,0 +1,38 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+uniCloud-alipay/cloudfunctions/router/.env
+!uniCloud-alipay/cloudfunctions/router/.env.example
+
+# Dependency/build output
+node_modules/
+**/node_modules/
+unpackage/
+
+# Local IDE/build state
+.hbuilderx/
+
+# Payment/API certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+
+# uniCloud config center local secrets
+manifest.json
+!manifest.example.json
+uniCloud-alipay/database/uni-id-users.init_data.json
+!uniCloud-alipay/database/uni-id-users.init_data.example.json
+uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json
+uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js
+uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/vk-unicloud/index.js
+!uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/vk-unicloud/index.example.js
+
+# Local-only config files. Commit matching *.example files instead.
+*.local.js
+*.local.json
+*.secret.js
+*.secret.json

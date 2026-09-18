@@ -1,0 +1,59 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "title"],
+  "permission": {
+    "read": false,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "对话会话ID"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID"
+    },
+    "title": {
+      "bsonType": "string",
+      "description": "会话标题，默认来自用户第一条问题"
+    },
+    "title_source": {
+      "bsonType": "string",
+      "description": "标题来源：default / first_message / ai_summary",
+      "enum": ["default", "first_message", "ai_summary"]
+    },
+    "last_message": {
+      "bsonType": "string",
+      "description": "最近一条消息摘要"
+    },
+    "summary": {
+      "bsonType": "string",
+      "description": "超过 10 轮后压缩得到的会话摘要，用于减少后续 Agent 上下文 token"
+    },
+    "summarized_message_count": {
+      "bsonType": "int",
+      "description": "已经压缩进 summary 的消息数量"
+    },
+    "message_count": {
+      "bsonType": "int",
+      "description": "会话消息数量"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "状态：active / deleted",
+      "enum": ["active", "deleted"]
+    },
+    "created_at": {
+      "bsonType": "timestamp",
+      "description": "创建时间"
+    },
+    "updated_at": {
+      "bsonType": "timestamp",
+      "description": "更新时间"
+    }
+  },
+  "version": "0.0.2"
+}

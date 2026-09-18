@@ -1,0 +1,58 @@
+{
+  "bsonType": "object",
+  "required": ["user_id"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string", "description": "画像ID" },
+    "user_id": { "bsonType": "string", "description": "用户ID，Agent Memory 的用户隔离边界" },
+
+    "gender": { "bsonType": "string", "description": "性别（必填，显式画像）" },
+    "age_range": { "bsonType": "string", "description": "年龄区间" },
+    "height": { "bsonType": "any", "description": "身高 cm（建议，显式画像）" },
+    "weight": { "bsonType": "any", "description": "体重 kg" },
+    "body_type": { "bsonType": "string", "description": "体型" },
+    "preferred_styles": { "bsonType": "array", "description": "显式偏好风格" },
+    "preferred_scenes": { "bsonType": "array", "description": "显式常用场景" },
+    "liked_colors": { "bsonType": "array", "description": "喜欢的颜色" },
+    "disliked_colors": { "bsonType": "array", "description": "不喜欢的颜色" },
+    "avoid_styles": { "bsonType": "string", "description": "不想尝试的风格" },
+    "service_preferences": { "bsonType": "array", "description": "AI 服务偏好（可选多选）：daily_outfit / wardrobe_manage / style_upgrade" },
+    "tryon_person_image_url": { "bsonType": "string", "description": "AI 试穿默认全身照地址" },
+    "tryon_person_file_id": { "bsonType": "string", "description": "AI 试穿默认全身照云文件ID" },
+    "tryon_body_analysis": { "bsonType": "object", "description": "AI 试穿默认全身照的人像分析结果" },
+
+    "implicit_profile": {
+      "bsonType": "object",
+      "description": "AI 从行为中学习的隐式画像，每个维度带置信度 0-1",
+      "properties": {
+        "style": { "bsonType": "object" },
+        "color_preference": { "bsonType": "object" },
+        "color_avoid": { "bsonType": "object" },
+        "fit_preference": { "bsonType": "object" },
+        "material_preference": { "bsonType": "object" },
+        "category_bias": { "bsonType": "object" },
+        "style_avoid": { "bsonType": "object" },
+        "category_avoid": { "bsonType": "object" },
+        "body_concerns": { "bsonType": "object" },
+        "comfort_priority": { "bsonType": "object" },
+        "formality_level": { "bsonType": "object" },
+        "price_tier": { "bsonType": "object" },
+        "lifestyle": { "bsonType": "object" },
+        "temperature_sensitivity": { "bsonType": "object" },
+        "last_analyzed_at": { "bsonType": "timestamp" },
+        "data_source_counts": { "bsonType": "object" }
+      }
+    },
+
+    "member_plan": { "bsonType": "string", "description": "会员计划 free/pro" },
+    "member_expires_at": { "bsonType": "timestamp", "description": "会员到期时间" },
+    "tryon_quota_balance": { "bsonType": "int", "description": "试穿剩余额度" },
+    "daily_reminder_enabled": { "bsonType": "bool", "description": "每日穿搭提醒开关" },
+    "price_alert_enabled": { "bsonType": "bool", "description": "价格变动提醒开关" },
+    "memory_learning_enabled": { "bsonType": "bool", "description": "长期记忆学习开关" },
+    "private_image_mode": { "bsonType": "bool", "description": "隐私图片模式开关" },
+    "created_at": { "bsonType": "timestamp", "description": "创建时间" },
+    "updated_at": { "bsonType": "timestamp", "description": "更新时间" }
+  },
+  "version": "0.0.3"
+}

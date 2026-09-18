@@ -1,0 +1,97 @@
+{
+  "bsonType": "object",
+  "required": ["status", "type"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "user_id": {
+      "title": "用户ID",
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id"
+    },
+    "status": {
+      "title": "审核状态",
+      "bsonType": "int",
+      "defaultValue": 0,
+      "enum": [
+        { "value": 0, "text": "未审核" },
+        { "value": 1, "text": "已审核通过" },
+        { "value": 2, "text": "审核不通过" }
+      ]
+    },
+    "type": {
+      "title": "文件类型",
+      "bsonType": "string",
+      "enum": [
+        { "value": "image", "text": "图片" },
+        { "value": "video", "text": "视频" },
+        { "value": "audio", "text": "音频" },
+        { "value": "other", "text": "其他" }
+      ]
+    },
+    "url": {
+      "title": "URL地址",
+      "bsonType": "string",
+      "description": "外网可以访问的url地址"
+    },
+    "display_name": {
+      "title": "显示名称",
+      "bsonType": "string",
+      "description": "显示在后台的文件名称，默认=文件原名称（搜索是通过此字段搜索）"
+    },
+    "original_name": {
+      "title": "文件原名称",
+      "bsonType": "string"
+    },
+    "description": {
+      "title": "文件描述",
+      "bsonType": "string"
+    },
+    "size": {
+      "title": "文件大小",
+      "bsonType": "long",
+      "description": "文件大小，单位B"
+    },
+    "file_id": {
+      "title": "文件ID",
+      "bsonType": "string"
+    },
+    "provider": {
+      "title": "供应商类型",
+      "bsonType": "string",
+      "description": "unicloud：空间内置存储 aliyun：阿里云oss"
+    },
+    "category_id": {
+      "title": "分类ID",
+      "bsonType": "string"
+    },
+    "width": {
+      "title": "宽度",
+      "bsonType": "int"
+    },
+    "height": {
+      "title": "高度",
+      "bsonType": "int"
+    },
+    "orientation": {
+      "title": "图片方向",
+      "bsonType": "string",
+      "description": "图片的方向（只有App、小程序上传时才有效）"
+    },
+    "duration": {
+      "title": "视频时长",
+      "bsonType": "number"
+    },
+    "cover_image": {
+      "title": "视频封面图",
+      "bsonType": "string"
+    }
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "IndexName": "_add_time",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "_add_time", "Direction": "-1", "Type": "long" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "user_id",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "user_id", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "device_id",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "device_id", "Direction": "1" }], "MgoIsUnique": false }
+  }
+]

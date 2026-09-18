@@ -1,0 +1,34 @@
+[
+  {
+    "IndexName": "_add_time",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "_add_time", "Direction": "-1", "Type": "long" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "user_id",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "user_id", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "status",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "status", "Direction": "1", "Type": "int" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "type",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "type", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "display_name",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "display_name", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "url",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "url", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "category_id",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "category_id", "Direction": "1" }], "MgoIsUnique": false }
+  },
+  {
+    "IndexName": "size",
+    "MgoKeySchema": { "MgoIndexKeys": [{ "Name": "size", "Direction": "1", "Type": "long" }], "MgoIsUnique": false }
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "bsonType": "object",
+  "required": ["appid", "uni_platform", "version", "type", "create_env"],
+  "properties": {
+    "_id": {
+      "title": "ID"
+    },
+    "_add_time": {
+      "title": "添加时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "appid": {
+      "title": "AppID",
+      "bsonType": "string",
+      "description": "应用的AppID"
+    },
+    "name": {
+      "title": "应用名称",
+      "bsonType": "string"
+    },
+    "title": {
+      "title": "更新标题",
+      "bsonType": "string"
+    },
+    "contents": {
+      "title": "更新内容",
+      "bsonType": "string"
+    },
+    "platform": {
+      "title": "平台",
+      "bsonType": "array",
+      "arrayType": "string",
+      "enum": [
+        { "value": "Android", "text": "安卓" },
+        { "value": "iOS", "text": "苹果" },
+        { "value": "Harmony", "text": "鸿蒙 Next" }
+      ]
+    },
+    "type": {
+      "title": "安装包类型",
+      "bsonType": "string",
+      "enum": [
+        { "value": "native_app", "text": "原生App安装包" },
+        { "value": "wgt", "text": "Wgt资源包" }
+      ]
+    },
+    "version": {
+      "title": "版本号",
+      "bsonType": "string",
+      "description": "当前包版本号，必须大于当前线上发行版本号"
+    },
+    "min_uni_version": {
+      "title": "原生App最低版本",
+      "bsonType": "string"
+    },
+    "url": {
+      "title": "链接",
+      "bsonType": "string",
+      "description": "可下载或跳转的链接"
+    },
+    "stable_publish": {
+      "title": "是否上线发行",
+      "bsonType": "bool"
+    },
+    "is_silently": {
+      "title": "是否静默更新",
+      "bsonType": "bool",
+      "defaultValue": false
+    },
+    "is_mandatory": {
+      "title": "是否强制更新",
+      "bsonType": "bool",
+      "defaultValue": false
+    },
+    "create_date": {
+      "title": "上传时间",
+      "bsonType": "timestamp",
+      "forceDefaultValue": { "$env": "now" }
+    },
+    "uni_platform": {
+      "title": "uni平台",
+      "bsonType": "string",
+      "description": "uni平台信息，如：mp-weixin/web/ios/android"
+    },
+    "create_env": {
+      "title": "创建来源",
+      "bsonType": "string",
+      "enum": [
+        { "value": "uni-stat", "text": "uni统计自动创建" },
+        { "value": "upgrade-center", "text": "升级中心管理员创建" }
+      ]
+    },
+    "store_list": {
+      "title": "发布的应用市场",
+      "bsonType": "array",
+      "description": "发布的应用市场",
+      "properties": {
+        "id": {
+          "title": "商店id",
+          "bsonType": "string",
+          "description": "商店id，自动生成"
+        },
+        "name": {
+          "title": "商店名称",
+          "bsonType": "string"
+        },
+        "scheme": {
+          "title": "商店 scheme",
+          "bsonType": "string"
+        },
+        "enable": {
+          "title": "是否启用",
+          "bsonType": "bool"
+        },
+        "priority": {
+          "title": "优先级",
+          "bsonType": "int",
+          "description": "按照从大到小排序"
+        }
+      }
+    }
+  },
+  "version": "0.0.1"
+}
